@@ -3,16 +3,16 @@ import { apiResponse } from "../api.js";
 import DogCard from "../Components/DogCard.js";
 //apiResponse is an array of obj, map through it
 
-class DogsList extends Component {
+class FavList extends Component {
   getDoges = () => {
-    return apiResponse.map((dogs) => (
-      <DogCard appClickHandler={this.props.appClickHandler} doge={dogs} />
-    ));
+    return this.props.favDogs.map((dogs) => <DogCard doge={dogs} />);
   };
 
   render() {
+    // console.log("meep");
+    // console.log(this.props.favDogs);
     return <div className="list">{this.getDoges()}</div>;
   }
 }
 
-export default DogsList;
+export default FavList;
